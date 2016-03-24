@@ -9,19 +9,22 @@ $ npm install --save tempimp
 ```
 
 ## Usage
-```template/nav.html```
+```template/nav.html ```
+
 ```html
 <li class="nav-item"><a href="/home">Home</a></li>
 <li class="nav-item"><a href="/search">Search</a></li>
 <li class="nav-item"><a href="/whatever">Whatever</a></li>
 ```
-```public/js/main.js```
+
+```public/js/main.js ```
+
 ```js
 import {importTemplate} from './import-template';
 
 window.onload = function () {
   importTemplate('template/nav.html', {doc: document}).then(content => {
-    cont items = content.querySelectorAll('li.nav-item');
+    const items = content.querySelectorAll('li.nav-item');
 
     [].forEach.call(items, item => {
       document.querySelector('nav > ul#nav-items').appendChild(item);
@@ -29,7 +32,9 @@ window.onload = function () {
   });  
 };
 ```
-```index.html```
+
+```index.html ```
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +52,3 @@ window.onload = function () {
 </body>
 </html>
 ```
-### Options
-* ```doc``` Indicates the document object (*default:* ```document```).
-* ```hea``` Indicates the head object (*default:* ```document.head```).
